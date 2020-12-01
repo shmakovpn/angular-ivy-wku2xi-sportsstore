@@ -11,8 +11,6 @@ export class StoreComponent {
   public productsPerPage: number = 4;
   public selectedPage: number = 1;
 
-  publi
-
   constructor(private repository: ProductRepository) { }
 
   get products(): Product[] {
