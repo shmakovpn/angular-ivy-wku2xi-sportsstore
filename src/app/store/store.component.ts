@@ -11,6 +11,8 @@ export class StoreComponent {
   public productsPerPage: number = 4;
   public selectedPage: number = 1;
 
+  publi
+
   constructor(private repository: ProductRepository) { }
 
   get products(): Product[] {
@@ -31,11 +33,7 @@ export class StoreComponent {
     this.selectedPage = newPage;
   }
 
-  changePageSize(newSize: number|any): void {
-    if(typeof newSize !== 'number') {
-      console.log(newSize)
-      return
-    }
+  changePageSize(newSize: number|string): void {
     this.productsPerPage = Number(newSize);
     this.changePage(1);
   }
