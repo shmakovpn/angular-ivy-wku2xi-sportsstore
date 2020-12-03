@@ -44,6 +44,10 @@ export class StoreComponent {
     );
   }
 
+  addProductToCart(product: Product): void {
+    this.cart.addLine(product); // page 142
+  }
+
   // get pageNumbers(): number[] {
   //   return Array(Math.ceil(
   //       this.repository.getProducts(this.selectedCategory).length / this.productsPerPage
