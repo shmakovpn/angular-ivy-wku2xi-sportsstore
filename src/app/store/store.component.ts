@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { ProductRepository } from "../model/product.repository";
 import { Product } from "../model/products.model";
+import { Cart } from "../model/cart.model";
 
 @Component({
   selector: 'store',
@@ -11,7 +12,8 @@ export class StoreComponent {
   public productsPerPage: number = 4;
   public selectedPage: number = 1;
 
-  constructor(private repository: ProductRepository) { }
+  constructor(private repository: ProductRepository,
+              private cart: Cart) { } // page 141
 
   get products(): Product[] {
     const pageIndex = (this.selectedPage - 1)*this.productsPerPage
