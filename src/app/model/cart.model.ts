@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
+//@ts-ignore
 import { Product } from "./product.model";
-import { Product } from "./products.model";
 
 export class CartLine {
   constructor(public product: Product,
@@ -14,8 +14,8 @@ export class CartLine {
 @Injectable()
 export class Cart {
   public lines: CartLine[] = [];
-  public itemCount: number = 0;
-  public cartPrice: number = 0;
+  public itemCount: number = 0; // total number of items that have been selected
+  public cartPrice: number = 0; // total cost of items that have been selected
 
   protected recalculate(): void {
     this.itemCount = 0;
